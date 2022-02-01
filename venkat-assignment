@@ -1,0 +1,30 @@
+#include<stdio.h>
+void binary(int[],int,int);
+main()
+{
+int a[10]={12,22,31,34,56,78,80,82,90,97},i,item,beg,end,mid,loc;
+printf("Array Elements\n");
+for(i=0;i<10;i++)
+printf("%d\n",a[i]);
+printf("\nwhich  you want to search\t");
+scanf("%d",&item);
+loc=-1;
+beg=0;
+end=9;
+while(beg<=end )
+{
+mid=(beg+end)/2;
+if(a[mid]==item) {loc=mid; break;}
+else
+{
+if(a[mid]>item) 
+end=mid-1;
+else
+beg=mid+1;
+}
+
+}
+if(loc!=-1) printf("your asking element is=%d \t found in location=%d",item,mid+1);
+else
+printf("Asking element is not found");
+}
